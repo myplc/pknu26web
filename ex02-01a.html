@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 전체 페이지 기본 스타일 */
+      body {
+        font-family: "Pretendard", "Noto Sans KR", "Segoe UI", sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        margin: 0;
+      }
+
+      /* 제목 스타일 */
+      h1 {
+        color: #1a73e8;
+        margin-bottom: 10px;
+      }
+
+      /* '홈으로' 링크 스타일 */
+      a {
+        text-decoration: none;
+        color: #5f6368;
+        background-color: #fff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        transition: 0.2s;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      a:hover {
+        background-color: #e8eaed;
+      }
+
+      /* 폼 컨테이너(카드형) 스타일 */
+      form {
+        background: #ffffff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        line-height: 1.8;
+      }
+
+      /* 구분선 스타일 */
+      hr {
+        border: none;
+        border-top: 1px solid #e0e0e0;
+        margin: 20px 0;
+      }
+
+      /* 텍스트 및 숫자 입력칸 스타일 */
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0 16px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box; /* 패딩 포함 너비 계산 */
+        font-size: 15px;
+        transition: border-color 0.3s;
+      }
+
+      input[type="text"]:focus,
+      input[type="number"]:focus {
+        border-color: #1a73e8;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+      }
+
+      /* 라디오 버튼 및 체크박스 스타일 */
+      input[type="radio"],
+      input[type="checkbox"] {
+        transform: scale(1.2);
+        margin-left: 10px;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+
+      /* 제출 및 초기화 버튼 스타일 */
+      input[type="submit"],
+      input[type="reset"] {
+        width: 48%;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+      }
+
+      input[type="submit"] {
+        background-color: #1a73e8;
+        color: white;
+      }
+      input[type="submit"]:hover {
+        background-color: #1557b0;
+      }
+
+      input[type="reset"] {
+        background-color: #f1f3f4;
+        color: #3c4043;
+        float: right; /* 버튼을 가로로 배치 */
+      }
+      input[type="reset"]:hover {
+        background-color: #e8eaed;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>input 기능</h1>
+    <hr />
+    <a href="index.html">홈으로</a>
+    <form
+      action="https://docs.google.com/forms/d/e/1FAIpQLSc0QxJxyswBSQe3rwnqcm1EcDG5Iv7RuK97v-Qg08N-5lzQgg/formResponse"
+      method="GET"
+    >
+      First name : <input type="text" name="entry.138892254" /><br />
+      Last name : <input type="text" name="entry.965055117" /><br />
+      Age :
+      <input
+        type="number"
+        min="12"
+        max="20"
+        value="15"
+        step="1"
+        name="entry.59858012"
+      />
+      <hr />
+      아침식사 밥? :
+      <input
+        type="checkbox"
+        name="entry.732883117"
+        value="밥을 먹는다."
+        id=""
+      /><br />
+      아침식사 빵? :
+      <input
+        type="checkbox"
+        name="entry.732883117"
+        value="빵을 먹는다."
+        id=""
+        checked
+      />
+      <hr />
+      학생인가요?: <br />
+      예<input type="radio" name="entry.679356450" value="예" id="" checked />
+      아니오<input type="radio" name="entry.679356450" value="아니오" id="" />
+      <hr />
+      공부잘하나요? <br />
+      잘해요:<input type="radio" name="entry.2078237218" value="잘해요" id="" />
+      못해요:<input
+        type="radio"
+        name="entry.2078237218"
+        value="보통요"
+        id=""
+        checked
+      /><br />
+      <input type="submit" />
+      <input type="reset" />
+    </form>
+  </body>
+</html>
