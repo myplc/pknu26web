@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사진가운데</title>
+    <style>
+      :root {
+        --width1: 400px;
+      }
+      div {
+        width: 100%;
+      }
+      /* img {
+        display: block;
+        margin: 10px auto;
+        } */
+      img {
+        position: relative;
+        width: var(--width1);
+        left: calc(50% - var(--width1) / 2);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>가운데 정렬</h1>
+    <hr />
+    <a href="index.html">홈으로</a><br />
+    <div>
+      <img
+        src="https://png.pngtree.com/background/20230517/original/pngtree-very-long-hair-feline-looking-ahead-to-the-sun-picture-image_2623945.jpg"
+        alt=""
+      />
+    </div>
+  </body>
+</html>
