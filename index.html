@@ -1,35 +1,182 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      // alert("환영합니다!!!");
-    </script>
-    <title>HTML 실습</title>
+    <title>HTML 실습 대시보드</title>
+    <style>
+      /* 기본 초기화 */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family:
+          "Pretendard",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          sans-serif;
+        background-color: #f4f7f6;
+        color: #333;
+        padding: 20px;
+      }
+      /* 헤더 스타일 */
+      header {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 20px 30px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      header h1 {
+        font-size: 1.8rem;
+        margin: 0;
+      }
+      /* 그리드 레이아웃 (카드 배치) */
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 20px;
+      }
+      /* 일자별 카드 스타일 */
+      .day-card {
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        border-top: 4px solid #3498db;
+      }
+      .day-card h2 {
+        font-size: 1.2rem;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+      }
+      /* 링크 버튼 레이아웃 (Flexbox) */
+      .link-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      /* 개별 링크 버튼 스타일 */
+      .link-group a {
+        text-decoration: none;
+        color: #34495e;
+        background-color: #e8f4f8;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+        border: 1px solid #d1e8f2;
+      }
+      .link-group a:hover {
+        background-color: #3498db;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+      }
+    </style>
   </head>
   <body>
-    <h1 style="color: aliceblue; background-color: cadetblue; padding: 10px">
-      HTML 실습
-    </h1>
-    <hr />
-    <h2>1일차</h2>
-    <!-- (a[href="ex01-0$.html"]{예제$}br)*7 -->
-    <a href="ex01-01.html">예제1</a><br />
-    <a href="ex01-02.html">예제2</a><br />
-    <a href="ex01-03.html">예제3</a><br />
-    <a href="ex01-04.html">예제4</a><br />
-    <a href="ex01-05.html">예제5</a><br />
-    <a href="ex01-06.html">예제6</a><br />
-    <a href="ex01-07.html">예제7</a><br />
-    <h2>2 일차</h2>
-    <!-- (a[href="ex02-0$.html"]{예제$}br)*11 -->
-    <a href="ex02-01.html">예제1</a><br /><a href="ex02-02.html">예제2</a
-    ><br /><a href="ex02-03.html">예제3</a><br /><a href="ex02-04.html">예제4</a
-    ><br /><a href="ex02-05.html">예제5</a><br /><a href="ex02-06.html">예제6</a
-    ><br /><a href="ex02-07.html">예제7</a><br /><a href="ex02-08.html">예제8</a
-    ><br /><a href="ex02-09.html">예제9</a><br /><a href="ex02-10.html"
-      >예제10</a
-    ><br /><a href="ex02-11.html">예제11</a><br />
+    <header>
+      <h1>HTML 실습 대시보드</h1>
+    </header>
+
+    <div class="container">
+      <section class="day-card">
+        <h2>1일차</h2>
+        <div class="link-group">
+          <a href="ex01-01.html">예제 01</a><a href="ex01-02.html">예제 02</a>
+          <a href="ex01-03.html">예제 03</a><a href="ex01-04.html">예제 04</a>
+          <a href="ex01-05.html">예제 05</a><a href="ex01-06.html">예제 06</a>
+          <a href="ex01-07.html">예제 07</a>
+        </div>
+      </section>
+
+      <section class="day-card">
+        <h2>2일차</h2>
+        <div class="link-group">
+          <a href="ex02-01.html">예제 01</a><a href="ex02-01a.html">예제 01a</a
+          ><a href="ex02-02.html">예제 02</a><a href="ex02-02a.html">예제 02a</a
+          ><a href="ex02-03.html">예제 03</a><a href="ex02-04.html">예제 04</a>
+          <a href="ex02-05.html">예제 05</a><a href="ex02-06.html">예제 06</a>
+          <a href="ex02-07.html">예제 07</a><a href="ex02-08.html">예제 08</a>
+          <a href="ex02-09.html">예제 09</a><a href="ex02-10.html">예제 10</a>
+          <a href="ex02-11.html">예제 11</a>
+        </div>
+      </section>
+
+      <section class="day-card">
+        <h2>3일차</h2>
+        <div class="link-group">
+          <a href="ex03-01.html">예제 01</a><a href="ex03-02.html">예제 02</a>
+          <a href="ex03-03.html">예제 03</a><a href="ex03-04.html">예제 04</a>
+          <a href="ex03-05.html">예제 05</a><a href="ex03-06.html">예제 06</a>
+          <a href="ex03-07.html">예제 07</a><a href="ex03-08.html">예제 08</a>
+          <a href="ex03-09.html">예제 09</a><a href="ex03-10.html">예제 10</a>
+          <a href="ex03-11.html">예제 11</a><a href="ex03-12.html">예제 12</a>
+        </div>
+      </section>
+
+      <section class="day-card">
+        <h2>4일차</h2>
+        <div class="link-group">
+          <a href="ex04-01.html">예제 01</a><a href="ex04-02.html">예제 02</a>
+          <a href="ex04-03.html">예제 03</a><a href="ex04-04.html">예제 04</a>
+          <a href="ex04-05.html">예제 05</a><a href="ex04-06.html">예제 06</a>
+          <a href="ex04-07.html">예제 07</a><a href="ex04-08.html">예제 08</a>
+          <a href="ex04-09.html">예제 09</a><a href="ex04-10.html">예제 10</a>
+          <a href="ex04-11.html">예제 11</a><a href="ex04-12.html">예제 12</a>
+          <a href="ex04-13.html">예제 13</a><a href="ex04-14.html">예제 14</a>
+          <a href="ex04-15.html">예제 15</a><a href="ex04-16.html">예제 16</a>
+          <a href="ex04-17.html">예제 17</a>
+        </div>
+      </section>
+
+      <section class="day-card">
+        <h2>5일차</h2>
+        <div class="link-group">
+          <a href="ex05-01.html">예제 01</a><a href="ex05-02.html">예제 02</a>
+          <a href="ex05-03.html">예제 03</a><a href="ex05-04.html">예제 04</a>
+          <a href="ex05-05.html">예제 05</a><a href="ex05-06.html">예제 06</a>
+          <a href="ex05-07.html">예제 07</a><a href="ex05-08.html">예제 08</a>
+          <a href="ex05-09.html">예제 09</a><a href="ex05-10.html">예제 10</a>
+        </div>
+      </section>
+
+      <section class="day-card">
+        <h2>6일차</h2>
+        <div class="link-group">
+          <a href="ex06-01.html">예제 01</a><a href="ex06-02.html">예제 02</a>
+          <a href="ex06-03.html">예제 03</a><a href="ex06-04.html">예제 04</a>
+          <a href="ex06-05.html">예제 05</a><a href="ex06-06.html">예제 06</a>
+          <a href="ex06-07.html">예제 07</a><a href="ex06-08.html">예제 08</a>
+          <a href="ex06-09.html">예제 09</a><a href="ex06-10.html">예제 10</a>
+          <a href="ex06-11.html">예제 11</a><a href="ex06-12.html">예제 12</a>
+          <a href="ex06-13.html">예제 13</a><a href="ex06-14.html">예제 14</a>
+          <a href="ex06-15.html">예제 15</a><a href="ex06-16.html">예제 16</a>
+          <a href="ex06-17.html">예제 17</a>
+        </div>
+      </section>
+
+      <section class="day-card">
+        <h2>7일차</h2>
+        <div class="link-group">
+          <a href="ex07-01.html">예제 01</a><a href="ex07-01a.html">예제 01a</a
+          ><a href="ex07-02.html">예제 02</a> <a href="ex07-03.html">예제 03</a
+          ><a href="ex07-04.html">예제 04</a> <a href="ex07-05.html">예제 05</a
+          ><a href="ex07-06.html">예제 06</a>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
