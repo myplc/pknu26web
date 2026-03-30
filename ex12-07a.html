@@ -63,6 +63,9 @@
         opacity: 1;
         left: 10px;
       }
+      ul {
+        padding-left: 15px;
+      }
     </style>
   </head>
   <body>
@@ -120,6 +123,12 @@
 
         if (scrollY > 500 && scrollY < 1900) {
           leftMenu.classList.add("left-show");
+          leftMenu.innerHTML = `왼쪽메뉴 <ul>
+        <li> 실시간 스크롤 값</li>
+        <li>${scrollY}</li>
+        <li> 왼쪽메뉴 사라짐</li>
+        <li> 투명도 0에서 1로</li>
+      </ul>`;
         } else {
           leftMenu.classList.remove("left-show");
         }
