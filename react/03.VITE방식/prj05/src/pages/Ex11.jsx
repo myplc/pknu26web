@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Ex11() {
-  return <>11번예제</>;
+  return <>11번예제.ok</>;
 }
 
 export default Ex11;
