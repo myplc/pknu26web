@@ -1,78 +1,118 @@
-/* 🎨 Ex16 테이블 전용 미니멀 파스텔 CSS */
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  background: var(--surface);
+  margin-top: 1.5rem;
+}
 
 .table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin: 25px 0;
+  border-collapse: collapse;
   font-size: 0.95rem;
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(149, 157, 165, 0.08);
-  border: 1px solid #eef2ff;
+  text-align: left;
 }
 
 .table th {
   background-color: #f8fafc;
-  color: #475569;
-  text-align: left;
-  font-weight: 600;
-  padding: 16px 20px;
-  border-bottom: 2px solid #e2e8f0;
+  color: var(--text-muted);
+  font-weight: 700;
+  padding: 1rem 1.25rem;
+  border-bottom: 2px solid var(--border);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
 }
 
 .table td {
-  padding: 14px 20px;
-  border-bottom: 1px solid #f1f5f9;
-  color: #334155;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 500;
   vertical-align: middle;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-/* 마지막 행 테두리 제거 */
 .table tbody tr:last-child td {
   border-bottom: none;
 }
 
-/* 🌸 자동으로 행(Row)마다 번갈아가며 적용되는 4가지 파스텔 컬러 */
-.table tbody tr:nth-child(4n+1) {
-  background-color: #eef2ff; /* 1. 파스텔 퍼플/라벤더 */
+/* 부드러운 행 번갈아 배경 지정 */
+.table tbody tr:nth-child(even) {
+  background-color: #fafbfe;
 }
 
-.table tbody tr:nth-child(4n+2) {
-  background-color: #ecfdf5; /* 2. 파스텔 민트/그린 */
+.table tbody tr:hover {
+  background-color: rgba(99, 102, 241, 0.04) !important;
 }
 
-.table tbody tr:nth-child(4n+3) {
-  background-color: #fffbeb; /* 3. 파스텔 옐로우/골드 */
-}
-
-.table tbody tr:nth-child(4n+4) {
-  background-color: #ffebeb; /* 4. 파스텔 핑크/피치 */
-}
-
-/* 마우스 호버 시 살짝 어둡게 시각 피드백 제공 */
-.table tbody tr:hover td {
-  background-color: rgba(0, 0, 0, 0.02) !important;
-}
-
-/* 🛠️ 테이블 내부의 수량 입력창(input) 스타일 */
-.table td input[type="text"] {
-  width: 70px;
-  padding: 6px 10px;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
+/* 수량 인풋 박스 스타일 */
+.qtyInput {
+  width: 80px;
+  padding: 0.45rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
   text-align: center;
-  font-weight: 600;
-  color: #1e293b;
+  font-weight: 700;
+  color: var(--text);
   outline: none;
-  background-color: #ffffff;
-  transition: all 0.2s ease;
+  background-color: var(--surface);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.table td input[type="text"]:focus {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
-  background-color: #ffffff;
+.qtyInput:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+  transform: translateY(-1px);
+}
+
+.badgeCategory {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  background-color: #f1f5f9;
+  color: var(--text-muted);
+}
+
+.priceText {
+  font-family: 'Outfit', monospace;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.subtotalText {
+  font-family: 'Outfit', monospace;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* 합계 요약 영역 */
+.summaryContainer {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--primary-light);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.summaryLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-hover);
+}
+
+.summaryVal {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--primary);
+  font-family: 'Outfit', sans-serif;
 }

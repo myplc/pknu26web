@@ -6,9 +6,9 @@ services:
     container_name: namenode
     hostname: namenode
     ports:
-      - "9870:9870"   # HDFS 웹 UI
-      - "8088:8088"   # YARN 웹 UI
-      - "9000:9000"   # HDFS 통신 포트
+      - "9870:9870" # HDFS 웹 UI
+      - "8088:8088" # YARN 웹 UI
+      - "9000:9000" # HDFS 통신 포트
     volumes:
       - ./config/core-site.xml:/usr/local/hadoop/etc/hadoop/core-site.xml
       - ./config/hdfs-site.xml:/usr/local/hadoop/etc/hadoop/hdfs-site.xml

@@ -1,0 +1,64 @@
+.trackArea {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: radial-gradient(circle at 50% 50%, #f1f5f9 0%, #e2e8f0 100%);
+  border: 2px dashed rgba(99, 102, 241, 0.25);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: none; /* 실제 마우스 커서는 가림 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.placeholderText {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 600;
+  pointer-events: none;
+  user-select: none;
+  text-align: center;
+}
+
+.placeholderText span {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  color: #94a3b8;
+}
+
+.pointer {
+  position: absolute;
+  pointer-events: none;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  transform: translate(-50%, -50%); /* 정확히 중심에 배치 */
+  left: 0;
+  top: 0;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6), 0 0 40px rgba(168, 85, 247, 0.4);
+  z-index: 10;
+}
+
+/* 플로팅 좌표 칩 */
+.infoBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-md);
+  z-index: 20;
+  pointer-events: none;
+}

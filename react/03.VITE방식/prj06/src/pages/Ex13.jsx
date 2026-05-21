@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import mystyle from "./Ex13.module.css";
 import spin from "/src/assets/spinner.gif";
 const url = "https://jsonplaceholder.typicode.com/posts?_limit=20";
@@ -15,6 +14,7 @@ function Ex13() {
         console.log(result);
       });
   };
+
   /* 로딩화면 테스트 */
   useEffect(() => {
     const tid = setTimeout(() => {
@@ -29,25 +29,33 @@ function Ex13() {
   }, []);
 
   return (
-    <>
-      <h1>13. fetch / assets, public 사용 스피너 </h1>
-      {/* <img src="/public/spinner.gif" alt="스피너" /> */}
+    <div className="pageCard">
+      <header className="pageHeader">
+        <span className="badge">예제 #13</span>
+        <h1>13. fetch API & 스피너 로딩 처리</h1>
+        <h2>JSONPlaceholder에서 데이터를 비동기로 페치하고 로딩 스피너를 표시합니다.</h2>
+      </header>
 
       {data.length ? (
-        <ol>
-          {data.map((v) => {
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+          {data.map((v, i) => {
             return (
-              <li className={mystyle.line} key={v.id}>
-                {v.title}
-              </li>
+              <div className={mystyle.line} key={v.id}>
+                <span className={mystyle.listIndex}>{String(i + 1).padStart(2, '0')}</span>
+                <span>{v.title}</span>
+              </div>
             );
           })}
-        </ol>
+        </div>
       ) : (
-        <img src={spin} alt="로딩중..." />
+        <div className={mystyle.loadingContainer}>
+          <img className={mystyle.spinnerImg} src={spin} alt="로딩중..." />
+          <p className={mystyle.loadingText}>서버에서 안전하게 데이터를 불러오는 중입니다...</p>
+        </div>
       )}
-    </>
+    </div>
   );
 }
 
 export default Ex13;
+
